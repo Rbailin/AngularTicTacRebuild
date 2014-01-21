@@ -89,6 +89,10 @@ function playerTurn ($scope) {
 
 	$scope.reset = function() {
 		$scope.boxes = [['','',''],['','',''], ['','','']];
+		gameover = false;
+		$scope.winner = ''; 
+
+
 	}	
 };
 
