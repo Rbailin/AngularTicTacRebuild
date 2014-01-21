@@ -1,0 +1,48 @@
+.box {
+	width: 150px;
+	height: 150px;
+	border: 2px solid #ff1493;
+	float: left;
+}
+
+.box:hover {
+background-color: #ff1493;
+
+}
+
+#main {
+width: 500px;
+height: 500px;
+background-color: none;
+float: left;
+text-align: center;
+border: 3px #ff1493;
+position: relative;
+left: 150px;
+top: 100px;
+color: #ff1493;
+font-size: 30px;
+}
+
+.clear {
+clear: both;
+}
+
+.reset {
+border: red;
+}
+
+#winner {
+	
+}
+
+.background  {
+	background-image: url("sheride.jpg");
+	background-size: cover;
+	background-repeat: no-repeat;
+}
+
+img {
+	width: 150px;
+	height: 150px;
+}
