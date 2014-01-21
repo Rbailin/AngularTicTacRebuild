@@ -3,7 +3,7 @@ function playerTurn ($scope) {
 	
 // 	$scope.xTurn.val = true
 	$scope.boxes = [['','',''],['','',''], ['','','']];
-	var xTurn = {var: false};
+	var xTurn = {turn: false};
 	var gameover = false;
 	var X = "skatedog.jpeg";
 	var O = "UndieSkate.jpg";
@@ -13,11 +13,15 @@ function playerTurn ($scope) {
 		if($scope.winner == X || $scope.winner == O){
 			return gameover = true;
 		}
-			if($scope.boxes[r][c] != X || $scope.boxes[r][c] != O && !gameover) {
-			if(xTurn.var = !xTurn.var)
+		if($scope.boxes[r][c] != X && $scope.boxes[r][c] != O && !gameover) {
+			if(xTurn.turn = !xTurn.turn){
 				$scope.boxes[r][c] = X;
+			}
 			else
+			{
 				$scope.boxes[r][c] = O;
+			}
+
 		}
 	}
 
