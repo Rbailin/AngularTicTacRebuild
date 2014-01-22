@@ -7,6 +7,7 @@ function playerTurn ($scope) {
 	var gameover = false;
 	var X = "skatedog.jpeg";
 	var O = "UndieSkate.jpg";
+	var counter = 0;
 	
 
 	$scope.clickhere = function(r,c) {
@@ -21,6 +22,12 @@ function playerTurn ($scope) {
 			{
 				$scope.boxes[r][c] = O;
 			}
+			counter++;
+		if (counter == 9)
+	{
+		
+		alert("Road Rash - Game End!")
+	}
 
 		}
 	}
@@ -98,6 +105,7 @@ function playerTurn ($scope) {
 		gameover = false;
 		$scope.winner = ''; 
 		xTurn.turn = false;
+		counter = 0;
 		
 
 

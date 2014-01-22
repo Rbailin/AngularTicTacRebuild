@@ -10,9 +10,10 @@ x-ng-controller = "playerTurn"
 </head>
 
 <body class="background">
+   <h2> Tic Tac Toe! </h2>
   <div id="main">
-    <h2> Tic Tac Toe! </h2>
-        <div id= "winner" > WINNER = {{winner}}</div>
+    
+        <div id= "winner" > WINNER = <img src="{{winner}}"></div>
         <div x-ng-repeat = "row in boxes track by $index">
             <div x-ng-repeat = "box in row track by $index"
             class="box" x-ng-click = "clickhere($parent.$index, $index); winningPlayer()">

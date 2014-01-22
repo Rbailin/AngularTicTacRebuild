@@ -19,7 +19,7 @@ text-align: center;
 border: 3px #ff1493;
 position: relative;
 left: 150px;
-top: 100px;
+top: 10px;
 color: #ff1493;
 font-size: 30px;
 }
@@ -56,4 +56,19 @@ border: red;
 img {
 	width: 150px;
 	height: 150px;
+}
+
+#winner {
+color: black;
+font-size: 40px;
+float: right;
+position: relative;
+left: 600px;
+}
+
+h2 {
+	color: #ff1493;
+	font-size: 50px;
+	text-align: center;
+
 }
