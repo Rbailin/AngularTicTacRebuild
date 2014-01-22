@@ -47,9 +47,15 @@ function playerTurn ($scope) {
 				
 				if($scope.boxes[a][b] == O) {rowo++}
 
-				if($scope.boxes[a][b] == O) {columno++}
+				if($scope.boxes[b][a] == O) {columno++}
+
+				if($scope.boxes[b][b] == O) {dia1o++}
+
+
+
+				// if($scope.boxes[a][b] == O) {columno++}
 				
-				if($scope.boxes[a][b] == O) {dia1o++}
+				// if($scope.boxes[a][b] == O) {dia1o++}
 				
 				if($scope.boxes[b][2-b] == O) {dia2o++} 
 			};
@@ -91,7 +97,8 @@ function playerTurn ($scope) {
 		$scope.boxes = [['','',''],['','',''], ['','','']];
 		gameover = false;
 		$scope.winner = ''; 
-		counter
+		xTurn.turn = false;
+		
 
 
 	}	
