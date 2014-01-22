@@ -32,7 +32,18 @@ clear: both;
 border: red;
 }
 
-#winner {
+.button {
+	background-color: #ff1493;
+	float: right;
+	color: white;
+	position: absolute;
+	right: 150px;
+	bottom: 150px;
+	border-radius: 10px;
+	width: 200px;
+	height: 60px;
+	margin-left: 1000px;
+		 
 	
 }
 

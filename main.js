@@ -91,6 +91,7 @@ function playerTurn ($scope) {
 		$scope.boxes = [['','',''],['','',''], ['','','']];
 		gameover = false;
 		$scope.winner = ''; 
+		counter
 
 
 	}	

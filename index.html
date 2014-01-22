@@ -1,5 +1,7 @@
 <!DOCTYPE html>
-<html x-ng-app="">
+<html x-ng-app="" 
+x-ng-controller = "playerTurn"
+>
 
 <head>
   <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.7/angular.min.js"></script>
@@ -10,19 +12,21 @@
 <body class="background">
   <div id="main">
     <h2> Tic Tac Toe! </h2>
-      <div x-ng-controller = "playerTurn">
         <div id= "winner" > WINNER = {{winner}}</div>
         <div x-ng-repeat = "row in boxes track by $index">
             <div x-ng-repeat = "box in row track by $index"
             class="box" x-ng-click = "clickhere($parent.$index, $index); winningPlayer()">
             <!-- {{box}} -->
-            <img src="{{box}}" alt="">                                
-          </div>
-<!--               <img src="{{box}}" alt="">                                
- -->        </div>
-        <!-- </div> -->
-          <button ng-click="reset()">Reset board</button>
-      </div>
+            <img src="{{box}}" alt=""/>                             
+            </div>
+        </div>
   </div>
+      <button class = "button" ng-click="reset()">Reset board</button>
 </body>
 </html>
+
+
+
+
+<!--       <div x-ng-controller = "playerTurn">
+ -->
