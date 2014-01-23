@@ -3,6 +3,7 @@
 	height: 150px;
 	border: 2px solid #ff1493;
 	float: left;
+	white-space: nowrap;
 }
 
 .box:hover {
@@ -22,6 +23,24 @@ left: 150px;
 top: 10px;
 color: #ff1493;
 font-size: 30px;
+white-space: nowrap;
+}
+
+@media (max-width: 800px) {
+       /* Smaller Resolution Desktops and Laptops */
+       
+}
+@media (max-width: 650px) {
+       /* Smaller devices */
+       
+}
+@media (max-width: 450px) {
+       /* Even Smaller devices */
+       
+}
+@media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
+       /* Even Smaller devices */
+       
 }
 
 .clear {
@@ -51,6 +70,7 @@ border: red;
 	background-image: url("sheride.jpg");
 	background-size: cover;
 	background-repeat: no-repeat;
+	white-space: nowrap;
 }
 
 img {
@@ -72,3 +92,24 @@ h2 {
 	text-align: center;
 
 }
+
+
+
+
+@media (max-width: 800px) {
+       /* Smaller Resolution Desktops and Laptops */
+       
+}
+@media (max-width: 650px) {
+       /* Smaller devices */
+       
+}
+@media (max-width: 450px) {
+       /* Even Smaller devices */
+       
+}
+@media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
+       /* Even Smaller devices */
+       
+}
+
