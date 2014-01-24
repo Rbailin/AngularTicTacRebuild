@@ -1,29 +1,29 @@
 <!DOCTYPE html>
-<html x-ng-app="" 
-x-ng-controller = "playerTurn"
->
+<html x-ng-app="TicTacSkate" x-ng-controller = "playerTurn">
 
-<head>
-  <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.7/angular.min.js"></script>
-  <script src="main.js" type = "text/javascript"></script>
-  <link rel="stylesheet" type="text/css" href ="main.css"></link>
-</head>
+  <head>
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.7/angular.min.js"></script>
+    <link rel="stylesheet" type="text/css" href ="main.css"></link>
+    <script src="https://cdn.firebase.com/v0/firebase.js"></script> 
+    <script src="https://cdn.firebase.com/libs/angularfire/0.6.0/angularfire.min.js"></script>
+    <script src="main.js" type = "text/javascript"></script>
+  </head>
 
-<body class="background">
+  <body class="background">
    <h2> Tic Tac Toe! </h2>
-  <div id="main">
-    
-        <div id= "winner" > WINNER = <img src="{{winner}}"></div>
-        <div x-ng-repeat = "row in boxes track by $index">
-            <div x-ng-repeat = "box in row track by $index"
-            class="box" x-ng-click = "clickhere($parent.$index, $index); winningPlayer()">
-            <!-- {{box}} -->
-            <img src="{{box}}" alt=""/>                             
-            </div>
-        </div>
-  </div>
-      <button class = "button" ng-click="reset()">Reset board</button>
-</body>
+    <div id="main">
+      
+          <div id= "winner" > WINNER = <img src="{{winner}}"></div>
+          <div x-ng-repeat = "row in boxes track by $index">
+              <div x-ng-repeat = "box in row track by $index"
+              class="box" x-ng-click = "clickhere($parent.$index, $index); winningPlayer()">
+              <!-- {{box}} -->
+              <img src="{{box}}" alt=""/>                             
+              </div>
+          </div>
+    </div>
+        <button class = "button" ng-click="reset()">Reset board</button>
+  </body>
 </html>
 
 

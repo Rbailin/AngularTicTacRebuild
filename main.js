@@ -1,7 +1,19 @@
-function playerTurn ($scope) {
-// 	//do something
+var app = angular.module("TicTacSkate", ["firebase"]);
+
+app.controller("playerTurn", function($scope, $firebase)
+{
+
+	// var allvariablesRef = new Firebase("https://skatetictac.firebaseio.com/");
+
+	// 	$scope.allvariables = $firebase(allvariables);
+
+	// // }
+
+
+	// function playerTurn ($scope) {
+	// 	//do something
 	
-// 	$scope.xTurn.val = true
+	// 	$scope.xTurn.val = true
 	$scope.boxes = [['','',''],['','',''], ['','','']];
 	var xTurn = {turn: false};
 	var gameover = false;
@@ -10,38 +22,35 @@ function playerTurn ($scope) {
 	var counter = 0;
 	
 
-	$scope.clickhere = function(r,c) {
-		if($scope.winner == X || $scope.winner == O){
-			return gameover = true;
-		}
-		if($scope.boxes[r][c] != X && $scope.boxes[r][c] != O && !gameover) {
-			if(xTurn.turn = !xTurn.turn){
-				$scope.boxes[r][c] = X;
-			}
-			else
-			{
-				$scope.boxes[r][c] = O;
-			}
-			counter++;
-		if (counter == 9)
+	$scope.clickhere = function(r,c) 
 	{
-		
-		alert("Road Rash - Game End!")
-	}
-
+		if($scope.winner == X || $scope.winner == O)
+			return gameover = true;
+		if($scope.boxes[r][c] != X && $scope.boxes[r][c] != O && !gameover) 
+		{
+			if(xTurn.turn = !xTurn.turn)
+				$scope.boxes[r][c] = X;
+			else
+				$scope.boxes[r][c] = O;
+			counter++;
 		}
+		if (counter == 9)
+			alert("Road Rash - Game End!");
 	}
 
-	$scope.winningPlayer = function () {	
+	$scope.winningPlayer = function () 
+	{	
 
-		for(a=0; a < 3; a++) {
+		for(a=0; a < 3; a++) 
+		{
 			
 			var rowx = 0; var rowo = 0;
 			var columnx = 0;  var columno = 0;
 			var dia1x = 0;  var dia1o = 0;
 			var dia2x = 0;  var dia2o =0; 
 
-			for(b=0; b<3; b++){
+			for(b=0; b<3; b++)
+			{
 				
 				if($scope.boxes[a][b] == X) {rowx++} 
 				
@@ -85,8 +94,6 @@ function playerTurn ($scope) {
 			if(dia2o == 3) 
 				$scope.winner = O;
 		};	
-
-			
 	};
 
 	// $scope.reset = function () {
@@ -100,17 +107,15 @@ function playerTurn ($scope) {
 	// 	};	
 	// };
 
-	$scope.reset = function() {
+	$scope.reset = function() 
+	{
 		$scope.boxes = [['','',''],['','',''], ['','','']];
 		gameover = false;
 		$scope.winner = ''; 
 		xTurn.turn = false;
 		counter = 0;
-		
-
-
 	}	
-};
+});
 
 
 
