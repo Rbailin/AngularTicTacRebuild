@@ -62,16 +62,18 @@ angular.module("TicTacSkate", ["firebase"])
  	{
  		for(var i = 0; i < $scope.obj.boxes.length; i++)
  		{
- 			if($scope.obj.boxes[i].indexOf(X) != -1)
- 				return false;
- 			else
+ 			if($scope.obj.boxes[i].indexOf(X) == -1)
  				return true;
+ 			else if(playerSymbol == X && $scope.obj.xTurn)
+				return true;
+			else
+				return false;
  		}
  	}
 
  	function imHere ()
  	{
- 		if(playerSymbol == X || playerSymbol == O)
+ 		if(playerSymbol != X && $scope.obj.xTurn == false)
  			return true;
  	}
 
