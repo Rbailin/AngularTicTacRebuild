@@ -6,7 +6,7 @@ angular.module("TicTacSkate", ["firebase"])
  	ticTacRef = new Firebase("https://skatetictac.firebaseio.com/");
  	$scope.fbRoot = $firebase(ticTacRef);
 
-	var xTurn = {turn: false};
+	// var xTurn = {turn: false};
 	var gameover = false;
 	var X = "skatedog.jpeg";
 	var O = "UndieSkate.jpg";
@@ -34,46 +34,36 @@ angular.module("TicTacSkate", ["firebase"])
 
 	});
 
- 	// $scope.makeMove = function(idx){
- 	// 	if($scope.obj.boxes[idx]=="")
- 	// 	{
-		// 	$scope.obj.boxes[idx] = $scope.obj.xTurn ?'X':'O';
-		// 	$scope.obj.xTurn = !$scope.obj.xTurn;
-		// 	$scope.obj.$save();
- 	// 	}
-
-
-
-// var iam - function() {
-//      return mySymbol == ($scope.obj.xturn ? 'X' : 'O'); 
-// };
- 
-// makeMove =
-
-// if($scope.obj.board[idx] == "" && (hasNotBeenTaken($scope.obj.xturn) || iAm($scope.obj.xturn))
-
-
-// if($scope.obj.board[idx] == "" && (hasNotBeenTaken() || iAm())
-
-
 
 
  	function xTaken() 
  	{
- 		for(var i = 0; i < $scope.obj.boxes.length; i++)
- 		{
- 			if($scope.obj.boxes[i].indexOf(X) == -1)
- 				return true;
- 			else if(playerSymbol == X && $scope.obj.xTurn)
-				return true;
-			else
-				return false;
- 		}
+ 		var joinedboxes = $scope.obj.boxes.join();
+ 		if(joinedboxes.match(X) == null)
+ 			return true;
+ 		else if(joinedboxes.match(O) == null && playerSymbol != X)
+ 			return true;
+ 		else 
+ 			return false;
+
+ 		// for(var i = 0; i < $scope.obj.boxes.length; i++)
+ 		// {
+ 		// 	if($scope.obj.boxes[i].indexOf(X) == -1)
+ 		// 		return true;
+ 		// 	else if($scope.obj.boxes[i].indexOf(O) == -1 && $scope.obj.boxes[i].indexOf(X) != -1 && playerSymbol == null)
+			// 	return true;
+			// else
+			// 	return false;
+ 		// }
+ 		// if ($scope.obj.xTurn == false && playerSymbol == null)
+ 			// return true;
  	}
 
  	function imHere ()
  	{
- 		if(playerSymbol != X && $scope.obj.xTurn == false)
+ 		if(playerSymbol == X && $scope.obj.xTurn == true)
+ 			return true;
+ 		else if(playerSymbol == O && $scope.obj.xTurn == false)
  			return true;
  	}
 
@@ -85,10 +75,7 @@ angular.module("TicTacSkate", ["firebase"])
 			return gameover = true;
 		if(xTaken() || imHere() && $scope.obj.boxes[r][c] != X && $scope.obj.boxes[r][c] != O && !gameover) 
 		{
-			// if(xTurn.turn = !xTurn.turn)
-			// 	$scope.obj.boxes[r][c] = X;
-			// else
-			// 	$scope.obj.boxes[r][c] = O;
+	
 			$scope.obj.boxes[r][c] = $scope.obj.xTurn ? X : O;
 			playerSymbol = $scope.obj.xTurn ? X : O;
 			$scope.obj.xTurn = !$scope.obj.xTurn;
@@ -174,23 +161,13 @@ angular.module("TicTacSkate", ["firebase"])
 		$scope.obj.$save();
 	};
 
-	// $scope.reset = function () {
-	// 	console.log("Before: " +  $scope.boxes);
-	// 	for (var row = 0; row < $scope.boxes.length; row++) {
-	// 		console.log("row: " + row);
-	// 		for (var cell = 0; cell < $scope.boxes.length; cell++) {
-	// 			$scope.boxes[row][cell] = null;
-	// 			console.log("cell: " + cell);
-	// 		};
-	// 	};	
-	// };
 
 	$scope.reset = function() 
 	{
 		$scope.obj.boxes = [['','',''],['','',''], ['','','']];
 		gameover = false;
 		$scope.obj.winner = ''; 
-		xTurn.turn = false;
+		$scope.obj.xTurn  = true;
 		counter = 0;
 		$scope.obj.$save();
 	}	
