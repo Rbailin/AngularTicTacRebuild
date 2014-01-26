@@ -45,23 +45,11 @@ angular.module("TicTacSkate", ["firebase"])
  			return true;
  		else 
  			return false;
-
- 		// for(var i = 0; i < $scope.obj.boxes.length; i++)
- 		// {
- 		// 	if($scope.obj.boxes[i].indexOf(X) == -1)
- 		// 		return true;
- 		// 	else if($scope.obj.boxes[i].indexOf(O) == -1 && $scope.obj.boxes[i].indexOf(X) != -1 && playerSymbol == null)
-			// 	return true;
-			// else
-			// 	return false;
- 		// }
- 		// if ($scope.obj.xTurn == false && playerSymbol == null)
- 			// return true;
  	}
 
  	function imHere ()
  	{
- 		if(playerSymbol == X && $scope.obj.xTurn == true)
+ 		if(playerSymbol == X && $scope.obj.xTurn)
  			return true;
  		else if(playerSymbol == O && $scope.obj.xTurn == false)
  			return true;
