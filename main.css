@@ -20,7 +20,7 @@ text-align: center;
 border: 3px #ff1493;
 position: relative;
 left: 150px;
-bottom: 100px;
+bottom: -50px;
 color: #ff1493;
 font-size: 30px;
 white-space: nowrap;
@@ -30,9 +30,7 @@ white-space: nowrap;
 clear: both;
 }
 
-.reset {
-border: red;
-}
+
 
 .button {
 	background-color: #ff1493;
@@ -45,8 +43,7 @@ border: red;
 	width: 200px;
 	height: 60px;
 	margin-left: 1000px;
-		 
-	
+
 }
 
 .background  {
@@ -63,10 +60,17 @@ img {
 
 #winner {
 color: black;
-font-size: 40px;
+font-size: 60px;
 float: right;
 position: relative;
-left: 600px;
+left: -150px;
+bottom: -80px;
+-webkit-left: -150px;
+-webkit-bottom: -80px;
+-moz-left: -100px;
+-moz-bottom: -80px;
+-o-left: -150px;
+-o-bottom: -80px;
 }
 
 h2 {
@@ -76,23 +80,4 @@ h2 {
 
 }
 
-
-
-
-@media (max-width: 800px) {
-       /* Smaller Resolution Desktops and Laptops */
-       
-}
-@media (max-width: 650px) {
-       /* Smaller devices */
-       
-}
-@media (max-width: 450px) {
-       /* Even Smaller devices */
-       
-}
-@media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
-       /* Even Smaller devices */
-       
-}
 
